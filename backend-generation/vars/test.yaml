@@ -1,0 +1,5 @@
+template_path: "templates/backend.tf"
+resource_group: "terraform-state-new"
+storage_account: "teststorageaccount"
+container_name: "testcontainername"
+key: "terraform.tfstate"

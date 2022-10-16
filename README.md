@@ -1,2 +1,3 @@
 # Azure
-Secure setup of an azure account programmtically using go
+
+Azure setup using terraform, bash and a bit of python

@@ -1,0 +1,5 @@
+template_path: "templates/backend.tf.j2"
+resource_group: "terraform-state"
+storage_account: "infrasynpatik"
+container_name: "infrasynpatik"
+key: "terraform.tfstate"
