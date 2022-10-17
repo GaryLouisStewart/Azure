@@ -14,7 +14,7 @@ variable_file = input(
 
 path = os.getcwd()
 file_path = "{0}".format(path + "/" + "backend.tf")
-vars_file = "{0}".format(path + "/" + "/vars" + "/" + variable_file + ".yaml")
+vars_file = "{0}".format(path + "/" + "vars" + "/" + variable_file + ".yaml")
 
 
 def read_yaml_values(yamlfile=str, value=str):
