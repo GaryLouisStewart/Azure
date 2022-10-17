@@ -9,8 +9,12 @@ import yaml
 from yaml.loader import SafeLoader
 
 
+variable_file = input(
+    "Please enter the name of the variable file you wish to use: \n")
+
 path = os.getcwd()
-file_path = f'{0}'.format(path + "/" + "backend.tf")
+file_path = "{0}".format(path + "/" + "backend.tf")
+vars_file = "{0}".format(path + "/" + "/vars" + "/" + variable_file + ".yaml")
 
 
 def read_yaml_values(yamlfile=str, value=str):
@@ -30,17 +34,17 @@ def render_terraform_backend(templatePath=str, resourceGroup=str, storageAccount
                                      container_name=containerName,
                                      key=keyName)
 
-        with open("backend.tf", "w") as f:
+        with open(file_path, "w") as f:
             f.write(output)
     except FileNotFoundError:
         return
 
 
-template_path = read_yaml_values("vars/azure.yaml", "template_path")
-resource_group = read_yaml_values("vars/azure.yaml", "resource_group")
-storage_account = read_yaml_values("vars/azure.yaml", "storage_account")
-container_name = read_yaml_values("vars/azure.yaml", "container_name")
-key = read_yaml_values("vars/azure.yaml", "key")
+template_path = read_yaml_values(vars_file, "template_path")
+resource_group = read_yaml_values(vars_file, "resource_group")
+storage_account = read_yaml_values(vars_file, "storage_account")
+container_name = read_yaml_values(vars_file, "container_name")
+key = read_yaml_values(vars_file, "key")
 
 
 if __name__ == "__main__":
